@@ -1,0 +1,1 @@
+During this meeting, we discussed our architecture plan with Karthik. He helped to the clarify our development timeline, and informed us of a few resources to look at to more clearly visualize our architecture. He advised us to write more code and get started writing code soon. Jack, Ross, and Spencer were present. 
