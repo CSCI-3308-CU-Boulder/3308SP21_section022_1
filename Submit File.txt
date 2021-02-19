@@ -1,0 +1,6 @@
+Jira: https://niketh49.atlassian.net/jira/software/projects/C3S01/boards/1
+github: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1
+
+Ross Panning's contributions: Ross has developed the means through which we will accomplish our end goal. He worked alongside Niketh during the design process for the wireframes. Also Ross edited the user stories and completed the project plan.
+He also did coded up a style guide, a login page, as well as provided the links for tutorials and how tos for HTML and CSS
+Ross Panning's latest commit: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1/commit/dbabf76a5409107865948b06b99b975cdf57a82b
