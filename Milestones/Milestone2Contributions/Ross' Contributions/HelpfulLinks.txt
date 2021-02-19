@@ -1,0 +1,9 @@
+HTML Color picker:https://www.w3schools.com/colors/colors_picker.asp
+CSS fonts : https://www.w3schools.com/css/css_font.asp
+Style inspiration: https://colorlib.com/wp/html5-and-css3-login-forms/
+How to align stuff: https://stackoverflow.com/questions/9264835/how-to-align-an-input-tag-to-the-center-without-specifying-the-width
+background Images: https://www.w3schools.com/cssref/pr_background-image.asp
+Rotate Images: https://www.geeksforgeeks.org/how-to-rotate-container-background-image-using-css/
+Wtf are margins: https://www.w3schools.com/css/css_margin.asp
+Borders: https://www.w3schools.com/css/css_border.asp
+Check box trouble shooting: https://stackoverflow.com/questions/14410753/move-html-checkbox-to-left-hand-side-of-its-width
