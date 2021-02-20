@@ -12,6 +12,6 @@ Spencer's contributions:  Spencer has taken initiative for organizing the group'
 Spencer's latest commit: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1/commit/151c35bdd6ec1c36f627efe9ea11cae2b70cfaac#diff-c7ac430437fd069ae8f3ae7f035ca6541da8bcd0e04f1bc6da8b5d5c83ee1b64
 
 Niketh's contributions: Niketh has conjured design and thought through plausibility of features. He has also helped design the wireframes and initial design.
-Niketh's latest commit :
+Niketh's latest commit : https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1/commit/9a8fd8712bcc454f0b47179468e7c238d0f9b092
 
 Caesar was not present, and we have been unable to contact him. Hence he has not contributions and no commits. 
