@@ -1,6 +1,17 @@
 Jira: https://niketh49.atlassian.net/jira/software/projects/C3S01/boards/1
 github: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1
 
-Ross Panning's contributions: Ross has developed the means through which we will accomplish our end goal. He worked alongside Niketh during the design process for the wireframes. Also Ross edited the user stories and completed the project plan.
+Ross's contributions: Ross has developed the means through which we will accomplish our end goal. He worked alongside Niketh during the design process for the wireframes. Also Ross edited the user stories and completed the project plan.
 He also did coded up a style guide, a login page, as well as provided the links for tutorials and how tos for HTML and CSS
-Ross Panning's latest commit: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1/commit/dbabf76a5409107865948b06b99b975cdf57a82b
+Ross's latest commit: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1/commit/dbabf76a5409107865948b06b99b975cdf57a82b
+
+Jack's contributions: Jack has enforced leadership keeping the group together and working hard. Jack has additionally worked alongside Ross and Niketh in the design process.
+Jacks' latest commit: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1/blob/main/Source%20Code/librario-home.html
+
+Spencer's contributions:  Spencer has taken initiative for organizing the group's thoughts. Spencer has begun thinking through the data science and systems we will use to develop our application. 
+Spencer's latest commit: https://github.com/CSCI-3308-CU-Boulder/3308SP21_section022_1/commit/151c35bdd6ec1c36f627efe9ea11cae2b70cfaac#diff-c7ac430437fd069ae8f3ae7f035ca6541da8bcd0e04f1bc6da8b5d5c83ee1b64
+
+Niketh's contributions: Niketh has conjured design and thought through plausibility of features. He has also helped design the wireframes and initial design.
+Niketh's latest commit :
+
+Caesar was not present, and we have been unable to contact him. Hence he has not contributions and no commits. 
