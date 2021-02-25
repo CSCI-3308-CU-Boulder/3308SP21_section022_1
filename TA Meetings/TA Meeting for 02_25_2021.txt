@@ -1,0 +1,13 @@
+﻿TA Meeting for 02/25/2021
+
+
+
+
+Discussed project updates. TA mentioned that we should update Jira as we progress further into the project. 
+
+
+Discussed Node.js and how Caesar was going to start researching how to link SQL and our HTML front end. 
+
+
+Lastly discussed design philosophy and how it is important to integrate features fully 
+(front end through back end) rather than making a whole bunch of features on HTML, and then making SQL, and then integrating them through Node.js.
