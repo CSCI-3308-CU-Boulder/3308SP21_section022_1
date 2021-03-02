@@ -1,0 +1,11 @@
+UserID,Username,FirstName,LastName,Email,DOB,PhoneNumber,City,Country,AccountCreationDate,TOSAcceptDate
+10000,legend,Jack,Uber,jackuber@gmail.com,9/6/1998,3035550555,Denver,United States of America,2/21/2021,2/21/2021
+10001,ace,Fatty,McPatty,fatace@comcast.net,8/17/1996,3035610394,Boulder,United States of America,2/21/2021,2/21/2021
+10002,spiderboy,Terance,Lebron,terance11@yahoo.com,3/20/1997,7202259908,Centennial,United States of America,2/22/2021,2/22/2021
+10003,yaggayeet,Harry,Kim,harry.kim@gmail.com,4/20/1942,7204305567,Littleton,United States of America,2/22/2021,2/22/2021
+10004,zelda,Nicole,Rossling,nikkyrossling@gmail.com,3/4/1991,7208885252,Littleton,United States of America,2/22/2021,2/22/2021
+10005,mikelli,Jeffrey,Stanz,jeffreystanz@hotmail.com,5/16/1990,7202883821,Boulder,United States of America,2/22/2021,2/22/2021
+10006,superdog,Spencer,Nikol,spnikol@yahoo.com,5/23/1995,7205352523,Boulder,United States of America,2/23/2021,2/23/2021
+10007,wendy,Wendy,Youngman,wyoungman@gmail.com,1/1/2011,7204656328,Boulder,United States of America,2/23/2021,2/23/2021
+10008,egirlhehe,Ashley,Madison,am1103@yahoo.com,6/10/1973,3038927489,Boulder,United States of America,2/23/2021,2/23/2021
+10009,fuegofuego,Juan,Martinez,jmartinez@gmail.com,5/18/1981,NULL,Mexico City,Mexico,2/23/2021,2/23/2021
