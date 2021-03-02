@@ -1,11 +1,11 @@
-UserID,Username,FirstName,LastName,Email,DOB,PhoneNumber,City,Country,AccountCreationDate,TOSAcceptDate
-10000,legend,Jack,Uber,jackuber@gmail.com,9/6/1998,3035550555,Denver,United States of America,2/21/2021,2/21/2021
-10001,ace,Fatty,McPatty,fatace@comcast.net,8/17/1996,3035610394,Boulder,United States of America,2/21/2021,2/21/2021
-10002,spiderboy,Terance,Lebron,terance11@yahoo.com,3/20/1997,7202259908,Centennial,United States of America,2/22/2021,2/22/2021
-10003,yaggayeet,Harry,Kim,harry.kim@gmail.com,4/20/1942,7204305567,Littleton,United States of America,2/22/2021,2/22/2021
-10004,zelda,Nicole,Rossling,nikkyrossling@gmail.com,3/4/1991,7208885252,Littleton,United States of America,2/22/2021,2/22/2021
-10005,mikelli,Jeffrey,Stanz,jeffreystanz@hotmail.com,5/16/1990,7202883821,Boulder,United States of America,2/22/2021,2/22/2021
-10006,superdog,Spencer,Nikol,spnikol@yahoo.com,5/23/1995,7205352523,Boulder,United States of America,2/23/2021,2/23/2021
-10007,wendy,Wendy,Youngman,wyoungman@gmail.com,1/1/2011,7204656328,Boulder,United States of America,2/23/2021,2/23/2021
-10008,egirlhehe,Ashley,Madison,am1103@yahoo.com,6/10/1973,3038927489,Boulder,United States of America,2/23/2021,2/23/2021
-10009,fuegofuego,Juan,Martinez,jmartinez@gmail.com,5/18/1981,NULL,Mexico City,Mexico,2/23/2021,2/23/2021
+UserID,Username,FirstName,LastName,Email,DOB,PhoneNumber,City,Country,AccountCreationDate,TOSAcceptDate,Password,SecurityQuestion1,SecurityAnswer1,SecurityQuestion2,SecurityAnswer2,SecurityQuestion3,SecurityAnswer3
+10000,legend,Jack,Uber,jackuber@gmail.com,9/6/1998,3035550555,Denver,United States of America,2/21/2021,2/21/2021,superSticious18$,Whats your favorite pets name?,buddy,What was your first car?,volvo,Whats your mothers maiden name?,nicole
+10001,ace,Fatty,McPatty,fatace@comcast.net,8/17/1996,3035610394,Boulder,United States of America,2/21/2021,2/21/2021,stankleg420,Whats your mothers maiden name?,susan,Whats your favorite pets name?,dotson,What was the name of the first girl you kissed?,nicole
+10002,spiderboy,Terance,Lebron,terance11@yahoo.com,3/20/1997,7202259908,Centennial,United States of America,2/22/2021,2/22/2021,yeeyeepriate,What was your first car?,jeep grand cherokee,What street did you grow up on?,jupiter drive,What was the name of the first girl you kissed?,jennifer
+10003,yaggayeet,Harry,Kim,harry.kim@gmail.com,4/20/1942,7204305567,Littleton,United States of America,2/22/2021,2/22/2021,password11,What is your favorite teachers name?,mr. bronkowski,What street did you grow up on?,baker avenue,Whats your favorite pets name?,jackie
+10004,zelda,Nicole,Rossling,nikkyrossling@gmail.com,3/4/1991,7208885252,Littleton,United States of America,2/22/2021,2/22/2021,myfavoritepassword,Whats your favorite pets name?,dodger,What was the name of the first girl you kissed?,ashley sparko,What is your favorite teachers name?,kelly walsh
+10005,mikelli,Jeffrey,Stanz,jeffreystanz@hotmail.com,5/16/1990,7202883821,Boulder,United States of America,2/22/2021,2/22/2021,452ggE##3dfj*,What street did you grow up on?,high street,What was the name of the first girl you kissed?,lindsay lohan,Whats your mothers maiden name?,tewcan
+10006,superdog,Spencer,Nikol,spnikol@yahoo.com,5/23/1995,7205352523,Boulder,United States of America,2/23/2021,2/23/2021,ie2hrt9hb3t6,Whats your mothers maiden name?,marie,Whats your favorite pets name?,sparkles,What was your first car?,ford pinto
+10007,wendy,Wendy,Youngman,wyoungman@gmail.com,1/1/2011,7204656328,Boulder,United States of America,2/23/2021,2/23/2021,SHG&*G78GS^&,What was the name of the first girl you kissed?,sexy girl,Whos your favorite celebrity?,jack black,What street did you grow up on?,marine street
+10008,egirlhehe,Ashley,Madison,am1103@yahoo.com,6/10/1973,3038927489,Boulder,United States of America,2/23/2021,2/23/2021,IH789gh89Hh83,Whats your favorite pets name?,rick,What is your favorite teachers name?,erin hall,What was your first car?,lexus gx450
+10009,fuegofuego,Juan,Martinez,jmartinez@gmail.com,5/18/1981,NULL,Mexico City,Mexico,2/23/2021,2/23/2021,H&*9g743n3r,Whats your favorite pets name?,gordo,Whats your mothers maiden name?,abuella,What is your favorite teachers name?,marte lugamos
