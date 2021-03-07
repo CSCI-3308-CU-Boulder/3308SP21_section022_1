@@ -1,0 +1,34 @@
+TA Meeting 3/2 - Interview
+Minutes 1-5
+Discussed balanced contributions
+Jack shares HTML section of demo
+Showed login page, form checking
+Email address needs an @ and following information
+Links to next page with sliders from most played games / recommendations
+Showed collections page with displayed (personal) games
+Mouse over games, shows further information
+Missing Niketh pages
+Karthik recommends password.js
+Ross showing Database
+DDL in MySQL 
+Setup to run queries
+Karthik mentions database is well setup
+Minutes 6-10
+Ross showing Database
+Show screen capture of workbench
+Karthik happy with tables
+Discussing tables for MySQL DDL
+UserGame vs. User vs. Game vs. Achievements
+Ross explaining method for Achievements
+Combine UserGame and UserAchievement (suggested by Karthik)
+Minutes 11-15
+Talking about node.js 
+Plan to implement it
+Used in Login Page / create an account
+Good feature to have
+Keep login tab open
+Suggested Change
+Setting up Postgres on Docker Containers
+Connect backend 
+MySQL vs. Postgres shouldn’t be an issue
+Minutes 16-20
