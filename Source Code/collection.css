@@ -1,0 +1,57 @@
+img {
+  filter: none;
+  -webkit-filter: none;
+}
+img:hover {
+  filter: url(filters.svg#grayscale);
+  /* Firefox 3.5+ */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+
+  /* Google Chrome & Safari 6+ */
+}
+
+.img__wrap {
+  position: relative;
+}
+
+.img__description {
+  margin-left: 3%; 
+  margin-top: 3%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  visibility: hidden;
+  opacity: 1;
+  color: yellow;
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+  text-shadow: 2px 2px black; 
+}
+
+.img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+
+
+}
+
+.img__wrap:hover img {
+  visibility: visible;
+  opacity: 1;
+    filter: url(filters.svg#grayscale);
+  /* Firefox 3.5+ */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+
+}
+
+.row{
+	margin-top: 10px; 
+}
+
