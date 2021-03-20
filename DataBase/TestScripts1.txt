@@ -1,0 +1,28 @@
+1. Get a User with a specific ID
+
+>>select UserID from mydb.user where UserID = ID;
+
+2. Get the number of users
+
+>>select count(*) from mydb.user;
+
+3. Get a User with a specific name
+
+>>select UserName from mydb.user where UserName = name;
+
+4. Get all of the games owned by a user
+
+>>CREATE VIEW games_per_user AS
+SELECT UserID, COUNT(UserID) FROM mydb.user INNER JOIN mydb.UserGame ON User.UserID = UserGames.UserID GROUP BY User.UserID;
+
+CREATE VIEW game_list As
+SELECT GameID, COUNT(GameID) FROM mydb games_per_user INNER JOIN mydb.Games ON games_per_user.GameID = Games.GameID GROUP BY games_per_user.GameID
+
+SELECT title FROM game_list INNER JOIN UserGames ON game_list.UserID = UserGames.UserID WHERE UserID = ID;
+
+5. Get the average score pf the games that a user owns
+
+>>CREATE VIEW review_per_user AS
+SELECT UserID, COUNT(UserID) FROM mydb.user INNER JOIN mydb.UserGame ON User.UserID = UserGames.UserID GROUP BY User.UserName;
+
+SELECT UserRating FROM review_per_user WHERE UserID ID;
