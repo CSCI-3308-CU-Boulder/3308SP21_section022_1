@@ -1,4 +1,3 @@
-# masterEJS
-<p>git clone https://github.com/petranb2/masterEJS.git</p>
-<p>cd startEJS</p>
-<p>Start your tutorial at <a href="https://medium.com/swlh/master-ejs-template-engine-with-node-js-and-expressjs-979cc22b69be">master-ejs-template-engine-with-node-js-and-expressjs</a><p>
+# Project Librario
+
+We want to create a software application that allows users to keep track of which games they own in their collection. Historically people with large collections of games have been forced to use antiquated software such as Microsoft Excel, and Google Charts to keep track of which games they own. We want to create a fun and easy way for people to not only track, but share their game collections with others.
