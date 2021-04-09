@@ -52,6 +52,24 @@ app.post("/addgame", (req, res) => {
   res.redirect("/");
 });
 
+app.get("/pages/friends", (req, res) => {
+  db.query('select * from friends', function(err, rows, fields){
+    if (err){
+      console.log('error', err);
+      res.render('pages/friends',{
+        my_title: 'Friends Page',
+        data: ''
+      })
+    }
+    else{
+      res.render('pages/friends',{
+        my_title: 'Friends',
+        data: rows
+      })
+    }
+  });
+});
+
 
 
 app.listen("3000", () => {
