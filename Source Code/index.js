@@ -70,11 +70,11 @@ app.get("/pages/friends", (req, res) => {
   });
 });
 
-app.get("/register", (req, res) => {
+app.get("/register", (req, res) => { //Spencer
   res.render('register.ejs');
 });
 
-app.post('/register', (req, res) => {
+app.post('/register', (req, res) => { //Spencer
   var un = req.body.username;  
   var pw = req.body.password;
   var fn = req.body.firstname;
