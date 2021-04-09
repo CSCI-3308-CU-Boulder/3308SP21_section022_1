@@ -101,6 +101,32 @@ app.post('/register', (req, res) => { //Spencer
   res.redirect("/home");
 });
 
+app.get("/account", (req, res) => { //spencer
+  res.render('account.ejs');
+});
+
+app.post('/account:username', (req, res) => { //spencer
+  var uncur = req.body.username; 
+  var unnew = req.body.newusername;
+  var sql = "update `User` set UserName = '"unnew"' where UserName = '"uncur"';";
+  db.query(sql, function (err, result) {
+    if(err) throw err;
+    console.log("Username changed from " + uncur + " to " + unnew);
+  });
+  res.redirect('/account');
+});
+
+app.post('/account:password', (req, res) => { //spencer
+  var pcur = req.body.password;
+  var pnew = req.body.newpassword;
+  var sql = "update `User` set password = '"pnew"' where password = '"pcur"';";
+  db.query(sql, function (err, result) {
+    if(err) throw err;
+    console.log("Password changed from " + pcur + " to " + pnew);
+  });
+  res.redirect('/account');
+});
+
 
 
 app.listen("3000", () => {
