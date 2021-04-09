@@ -70,6 +70,37 @@ app.get("/pages/friends", (req, res) => {
   });
 });
 
+app.get("/register", (req, res) => {
+  res.render('register.ejs');
+});
+
+app.post('/register', (req, res) => {
+  var un = req.body.username;  
+  var pw = req.body.password;
+  var fn = req.body.firstname;
+  var ln = req.body.lastname;
+  var em = req.body.email;
+  var dob = req.body.dob;
+  var pn = req.body.phonenumber;
+  var city = req.body.city;
+  var state = req.body.state;
+  var zip = req.body.zip;
+  var country = req.body.country;
+  var acd = req.body.accountcreationdate;
+  var sq1 = req.body.securityq1;
+  var sa1 = req.body.securitya1;
+  var sq2 = req.body.securityq2;
+  var sa2 = req.body.securitya2;
+  var sq3 = req.body.securityq3;
+  var sa3 = req.body.securitya3;
+  var sql = "insert into `User` (UserName, password, FirstName, LastName, Email, DOB, PhoneNumber, City, State, Zip, Country, AccountCreationDate, SecurityQuestion1, Answer1, SecurityQuestion2, Answer2, SecurityQuestion3, Answer3) VALUES ('"+un+"','"+pw+"','"+fn+"','"+ln+"','"+em+"','"+dob+"','"+pn+"','"+city+"', '"+state+"', '"+zip+"','"+country+"','"+acd+"','"+sq1+"','"+sa1+"','"+sq2+"','"+sa2+"','"+sq3+"','"+sa3+"');";
+  db.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+  res.redirect("/home");
+});
+
 
 
 app.listen("3000", () => {
