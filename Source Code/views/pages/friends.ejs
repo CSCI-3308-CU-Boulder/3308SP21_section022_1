@@ -1,0 +1,46 @@
+
+<%- include('../template/head') %>
+
+<%- include('../template/nav') %>
+
+<div class="container">
+
+  <div class="card-header" >
+
+    My Friends
+
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div class="card-header" >
+
+    Add Friends
+
+  </div>
+
+</div>
+
+<% if (data){
+
+  var friends = '';
+
+  data.forEach(function(item){
+
+    friends += '<div class="col"><div class="card"><img class = "card-image-top" src="https://drive.google.com/uc?id=1PBGvHJh9jOF7lSX-5ZtIiv0QJDKvS_IJ" alt="game image" width="200" height="300"><div class="card-body"><h3>'+ item.FirstName+'</h3><h4>'+ item.LastName+'</h4><h4>'+ item.LastName+'</h4><p></p><p class="card-subtitle mb-2 text-muted">'+item.DateReleased+'</p><p>'+item.Description+'</p></div></div></div>'
+
+  });
+
+  var hold = '<div class="row">'+ games +' </div>'
+
+  %>
+
+  <%- hold %>
+
+<% } %>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
