@@ -10,7 +10,7 @@ const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "AZza2163$",
-  multipleStatements: true,
+  multipleStatements: true,//nec app.get/friends
   database: "mydb",
 });
 
@@ -19,12 +19,14 @@ app.use(express.static(__dirname + '/'));
 
 app.get("/home", (req, res) => {
   res.render('pages/home', {
-    my_title: 'Home Page'
+    my_title: 'Home Page'//renders home page
   });
 })
 
 app.get("/", (req, res) => { //spencer
-  res.render('pages/login');
+  res.render('pages/login', {
+    my_title: 'Login Page'
+  });
 });
 
 
