@@ -6,21 +6,29 @@ const app = express();
 var bodyParser = require('body-parser'); //Ensure our body-parser tool has been added
 app.use(bodyParser.json());              // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
-
 const db = mysql.createPool({
-
   host: "localhost",
   user: "root",
   password: "AZza2163$",
+  multipleStatements: true,
   database: "mydb",
 });
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));
 
+app.get("/home", (req, res) => {
+  res.render('pages/home', {
+    my_title: 'Home Page'
+  });
+})
+
+app.get("/", (req, res) => { //spencer
+  res.render('pages/login');
+});
 
 
-app.get("/", (req, res) => {
+app.get("/collection", (req, res) => {
   db.query('select * from games', function(err, rows, fields){
     if (err){
       console.log('error', err);
@@ -49,22 +57,23 @@ app.post("/addgame", (req, res) => {
     if (err) throw err;
     console.log("1 record inserted");
   });
-  res.redirect("/");
+  res.redirect("/collection");
 });
-
-app.get("/pages/friends", (req, res) => {
-  db.query('select * from friends', function(err, rows, fields){
+app.get("/friends", (req, res) => {
+  db.query('select * from friendlist; select * from user', function(err, rows, fields){
     if (err){
       console.log('error', err);
       res.render('pages/friends',{
         my_title: 'Friends Page',
-        data: ''
+        data: '',
+        users: ''
       })
     }
     else{
       res.render('pages/friends',{
         my_title: 'Friends',
-        data: rows
+        data: rows[0],
+        users: rows[1]
       })
     }
   });
@@ -106,9 +115,9 @@ app.get("/account", (req, res) => { //spencer
 });
 
 app.post('/account:username', (req, res) => { //spencer
-  var uncur = req.body.username; 
+  var uncur = req.body.username;
   var unnew = req.body.newusername;
-  var sql = "update `User` set UserName = '"unnew"' where UserName = '"uncur"';";
+  var sql = "update `User` set UserName = '"+unnew+"' where UserName = '"+uncur+"';";
   db.query(sql, function (err, result) {
     if(err) throw err;
     console.log("Username changed from " + uncur + " to " + unnew);
@@ -119,7 +128,7 @@ app.post('/account:username', (req, res) => { //spencer
 app.post('/account:password', (req, res) => { //spencer
   var pcur = req.body.password;
   var pnew = req.body.newpassword;
-  var sql = "update `User` set password = '"pnew"' where password = '"pcur"';";
+  var sql = "update `User` set password = '"+pnew+"' where password = '"+pcur+"';";
   db.query(sql, function (err, result) {
     if(err) throw err;
     console.log("Password changed from " + pcur + " to " + pnew);
@@ -132,3 +141,4 @@ app.post('/account:password', (req, res) => { //spencer
 app.listen("3000", () => {
   console.log("Server started on port 3000");
 });
+
