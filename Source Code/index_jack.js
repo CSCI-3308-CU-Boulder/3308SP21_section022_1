@@ -147,6 +147,8 @@ data: 'search "'+ game_name +'"; fields id , url; limit 1;'
         var str2 = JSON.stringify(response.data[0]);
         cover_ID_parsed = JSON.parse(str2);
         console.log("Look over there!", cover_ID_parsed.image_id);
+	    
+	//ROSS & SPENCER : URL IS STORED IN VAR image_url BELOW - NEEDS TO BE PUSHED TO DB
 
         var image_url = 'https://images.igdb.com/igdb/image/upload/t_cover_big/'+cover_ID_parsed.image_id+'.png';
         console.log("Look over there!", image_url);
