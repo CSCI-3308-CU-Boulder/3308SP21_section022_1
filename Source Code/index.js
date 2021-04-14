@@ -131,7 +131,9 @@ app.get("/friends", (req, res) => {
 });
 
 app.get("/register", (req, res) => { //Spencer
-  res.render('/pages/login');
+  res.render('pages/register', {
+    my_title: 'Register Page'
+  });
 });
 
 app.post('/register', (req, res) => { //Spencer
