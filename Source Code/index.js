@@ -167,7 +167,7 @@ app.post('/register', (req, res) => { //Spencer
     if (err) throw err;
     console.log("1 record inserted");
   });
-  res.redirect("/login");
+  res.redirect("/");
 });
 
 app.listen("3000", () => {
