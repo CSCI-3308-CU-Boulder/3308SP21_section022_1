@@ -12,12 +12,11 @@
   <% if (data){
     var friends = '';
     data.forEach(function(item){
-      friends += '<div class="col"><div class="card"><div class="card-body"><h3>'+ item.UserName+'</h3></div></div></div>'
+      friends += '<div class="col"><div class="card"><img class="card-img-top" src="../../public/img/icon<%= Math.floor((Math.random() * 6) + 1) %>@2x.png" height="200" width="100" alt="Card image cap"><div class="card-body"><h3>'+ item.UserName+'</h3></div></div></div>'
     });
     var hold = '<div class="row">'+ friends +' </div>'
     %>
-    
-    <img src="../../public/img/icon<%= Math.floor((Math.random() * 6) + 1) %>@2x.png" height="100" width="100">
+   
     <%- hold %>
   <% } %>
 
