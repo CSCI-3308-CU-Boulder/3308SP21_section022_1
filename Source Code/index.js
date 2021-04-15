@@ -33,6 +33,11 @@ app.get("/", (req, res) => { //spencer
   });
 });
 
+app.get("/logout", (req, res) => { //spencer
+  UserId = 0;
+  res.redirect("/");
+});
+
 app.post("/login", (req, res) => { //spencer
   const un = req.body.username;
   const pas = req.body.password;
