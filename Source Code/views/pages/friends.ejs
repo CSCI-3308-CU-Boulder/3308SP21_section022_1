@@ -46,6 +46,33 @@
   <% } %>
 </div>
 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Collection</h5>
+
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <% if (data){
+          var games = '';
+          data.forEach(function(item){
+            games += '<div class="col"><div class="card"><img class = "card-image-top" src="https://drive.google.com/uc?id=1PBGvHJh9jOF7lSX-5ZtIiv0QJDKvS_IJ" alt="game image" width="200" height="300"><div class="card-body"><h5>'+ item.Title+'</h5><p></p><p class="card-subtitle mb-2 text-muted">'+item.DateReleased+'</p><p>'+item.Description+'</p></div></div></div>'
+          });
+          var hold = '<div class="row">'+ games +' </div>'
+          %>
+          <%- hold %>
+        <% } %>
+
+    </div>
+  </div>
+</div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
