@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`User` (
 ENGINE = InnoDB;
 
 insert into `mydb`.`User` (`UserID`, `UserName`, `FirstName`, `LastName`,`Email`, `DOB`,`PhoneNumber`, `City`, `State`, `Zip`, `Country`, `AccountCreationDate`, `password`, `SecurityQuestion1`, `Answer1`, `SecurityQuestion2`, `Answer2`, `SecurityQuestion3`, `Answer3`, `Recently Played`, `Recent Play Time`, `Last Played Date`, `Total Time Played` ) values
-
+    
     (10000,'legend','Jack','Uber','jackuber@gmail.com','1998-09-06',3035550555,'Denver','CO', null, 'United States of America','2021-02-21','superSticious18$','Whats your favorite pets name?','buddy','What was your first car?','volvo','Whats your mothers maiden name?','nicole', null, null, null , null),
     (10001,'ace','Fatty','McPatty','fatace@comcast.net','1996-09-17',3035610394,'Boulder','CO', null,'United States of America','2021-02-21','stankleg420','Whats your mothers maiden name?','susan','Whats your favorite pets name?','dotson','What was the name of the first girl you kissed?','nicole',null, null, null , null),
     (10002,'spiderboy','Terance','Lebron','terance11@yahoo.com','1997-03-20',7202259908,'Centennial','AZ',null,'United States of America','2021-02-22','yeeyeepriate','What was your first car?','jeep grand cherokee','What street did you grow up on?','jupiter drive','What was the name of the first girl you kissed?','jennifer',null, null, null , null),
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Games` (
   `ESRB_Rating` VARCHAR(4) NULL,
   `DateReleased` DATE NULL,
   `Publisher` VARCHAR(45) NULL,
-  `Link` VARCHAR(45) NULL,
+  `Link` VARCHAR(100) NULL,  
   `Developer` VARCHAR(45) NULL,
   `Notes` TINYTEXT NULL,
   `CommunityReview` DECIMAL(2,1) NULL,
@@ -121,7 +121,7 @@ insert into `mydb`.`UserGame`(`User_UserID`, `UserIGN`,  `UserReview`,  `UserRat
     (10003, null, null, null, null, null, null, 7),
     (10004, null, null, null, null, null, null, 7),
     (10004, null, null, null, null, null, null, 9);
-
+    
 DROP TABLE IF EXISTS `mydb`.`Tags` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Tags` (
@@ -207,12 +207,14 @@ insert into `mydb`.`Achievements`(`AchievementID`,  `Name`,  `Description`, `Com
 
 CREATE TABLE IF NOT EXISTS `mydb`.`FriendList` (
   `UserID` INT NOT NULL,
+  `UserName` VARCHAR(45) NOT NULL,
+  `AbleToViewGames` TINYINT NOT NULL,
   PRIMARY KEY (`UserID`))
 ENGINE = InnoDB;
 
-insert into `mydb`.`Friendlist`(`UserID`) values
-	  (10001),
-    (10002);
+insert into `mydb`.`Friendlist`(`UserID`,  `Username`,  `AbleToViewGames`) values
+	(10001, 'ace', 1),
+    (10011, 'spiderboy', 0);
 
 DROP TABLE IF EXISTS `mydb`.`UserFriends` ;
 
@@ -234,8 +236,7 @@ ENGINE = InnoDB;
 
 insert into `mydb`.`UserFriends`(`user_UserID`, `FriendList_UserID` ) values
 	(10000, 10001),
-  (10000, 10002);
-
+    (10001, 10002);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
