@@ -179,7 +179,7 @@ data: 'search "'+ game_name +'"; fields id , url; limit 1;'
 
 
 app.get("/friends", (req, res) => {
-  db.query("select O.* from friendlist O,  user P, userfriends Q where (P.UserID = '"+UserId+"') and (P.UserID = Q.User_UserID) and (Q.FriendList_UserID = O.UserID); select * from user where UserID !='"+UserId+"'", function(err, rows, fields){
+  db.query("select O.* from friendlist O,  user P, userfriends Q where (P.UserID = '"+UserId+"') and (P.UserID = Q.User_UserID) and (Q.FriendList_UserID = O.UserID); select O.* from user O, userfriends P where (O.UserID != '"+UserId+"') and (P.user_UserID = '"+UserId+"') and (P.FriendList_UserID != O.UserID)", function(err, rows, fields){
     if (err){
       console.log('error', err);
       res.render('pages/friends',{
