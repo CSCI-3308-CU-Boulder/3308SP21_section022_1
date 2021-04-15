@@ -15,7 +15,7 @@
       var x = Math.floor((Math.random() * 6) + 1);
       x = "../../public/img/icon" + String(x) + "@2x.png";
       console.log(x);
-      friends += '<div class="col"><div class="card"><img class="img" src= '+x+' height="200" width="200" alt="Card image cap"><div class="card-body"><h3>'+ item.UserName+'</h3></div></div></div>'
+      friends += '<div class="col"><div class="card"><img class="img" src= '+x+' height="200" width="200" alt="Card image cap"><div class="card-body"><h3>'+ item.UserName+'</h3></div><button class="open-friends-button" data-toggle="modal" data-target="#exampleModalCenter"  value = "'+ item.UserID +'" onclick="/viewCollection(this.value)")">View Collection</button></div></div>'
     });
     var hold = '<div class="row">'+ friends +' </div>'
     %>
