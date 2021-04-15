@@ -1,5 +1,10 @@
 const express = require("express");
 const mysql = require("mysql");
+//const bodyParser = require('body-parser');
+//app.use(bodyParser.json());              // Support json encoded bodies
+//app.use(bodyParser.urlencoded({ extended: true })); // Support encoded bodies
+const axios = require('axios');
+const qs = require('query-string');
 
 const app = express();
 
@@ -108,12 +113,70 @@ app.post("/addgame", (req, res) => {
   TheGameName = req.body.gamename;
 	var game_year = req.body.yearpublished;
   var game_descrip = req.body.description;
-  var sql = "INSERT INTO `games` (Title, DateReleased, Description) VALUES ('"+game_name+"', '"+game_year+"', '"+ game_descrip+"')";
-  db.query(sql, function (err, result) {
-    if (err) throw err;
-  });
-  res.redirect("/medi");
+
+  var game_ID = '';
+  var game_ID_parsed = '';
+
+  var cover_ID_parsed = '';
+
+axios({
+ url: "https://api.igdb.com/v4/games",
+method: 'POST',
+headers: {
+    'Accept': 'application/json',
+    'Client-ID': '54i070u8zuqpv3mbiwvefctz97v6s5',
+    'Authorization': 'Bearer 40g813wcepsnx8ko6cgjld4k1y7why'
+},
+data: 'search "'+ game_name +'"; fields id , url; limit 1;'
+
+})
+.then(response => {
+    console.log(response.data);
+    var str = JSON.stringify(response.data[0]);
+    game_ID_parsed = JSON.parse(str);
+    console.log("Look over there!", game_ID_parsed.id);
+
+    axios({
+     url: "https://api.igdb.com/v4/covers",
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Client-ID': '54i070u8zuqpv3mbiwvefctz97v6s5',
+        'Authorization': 'Bearer 40g813wcepsnx8ko6cgjld4k1y7why'
+    },
+    data: 'fields alpha_channel,animated,checksum,game,height,image_id,url,width; where game =' + game_ID_parsed.id + ';'
+
+  })
+    .then(response => {
+        console.log(response.data);
+        var str2 = JSON.stringify(response.data[0]);
+        cover_ID_parsed = JSON.parse(str2);
+        console.log("Look over there!", cover_ID_parsed.image_id);
+
+	//ROSS & SPENCER : URL IS STORED IN VAR image_url BELOW - NEEDS TO BE PUSHED TO DB
+
+        var image_url = 'https://images.igdb.com/igdb/image/upload/t_cover_big/'+cover_ID_parsed.image_id+'.png';
+        console.log("Look over there!", image_url);
+
+        var sql = "INSERT INTO `games` (Title, DateReleased, Description, Link) VALUES ('"+game_name+"', '"+game_year+"', '"+ game_descrip+"', '"+image_url+"')";
+        db.query(sql, function (err, result) {
+          if (err) throw err;
+        });
+        res.redirect("/medi");
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
+
+    })
+.catch(err => {
+    console.error(err);
 });
+
+
+});
+
 
 app.get("/friends", (req, res) => {
   db.query("select O.* from friendlist O,  user P, userfriends Q where (P.UserID = '"+UserId+"') and (P.UserID = Q.User_UserID) and (Q.FriendList_UserID = O.UserID); select * from user where UserID !='"+UserId+"'", function(err, rows, fields){
