@@ -111,7 +111,7 @@ app.get("/medi", (req, res) =>{
 
 app.post("/addgame", (req, res) => {
   var game_name = req.body.gamename;
-  TheGameName = req.body.gamename;
+  TheGameName = game_name;
 	var game_year = req.body.yearpublished;
   var game_descrip = req.body.description;
 
@@ -161,9 +161,14 @@ data: 'search "'+ game_name +'"; fields id , url; limit 1;'
 
         var sql = "INSERT INTO `games` (Title, DateReleased, Description, Link) VALUES ('"+game_name+"', '"+game_year+"', '"+ game_descrip+"', '"+image_url+"')";
         db.query(sql, function (err, result) {
-          if (err) throw err;
+          if (err){
+            console.log('error', err);
+            res.redirect("/collection");
+          }
+          else{
+            res.redirect("/medi");
+          }
         });
-        res.redirect("/medi");
     })
     .catch(err => {
         console.error(err);
@@ -303,3 +308,4 @@ app.post('/register', (req, res) => { //Spencer
 app.listen("3000", () => {
   console.log("Server started on port 3000");
 });
+
