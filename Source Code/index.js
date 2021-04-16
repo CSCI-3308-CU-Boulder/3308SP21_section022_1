@@ -11,6 +11,7 @@ const app = express();
 
 var UserId = 0;
 var TheGameName = "junk";
+var friendID = 0;
 
 var bodyParser = require('body-parser'); //Ensure our body-parser tool has been added
 app.use(bodyParser.json());              // support json encoded bodies
@@ -179,7 +180,7 @@ data: 'search "'+ game_name +'"; fields id , url; limit 1;'
 
 
 app.get("/friends", (req, res) => {
-  db.query("select O.* from friendlist O,  user P, userfriends Q where (P.UserID = '"+UserId+"') and (P.UserID = Q.User_UserID) and (Q.FriendList_UserID = O.UserID); select O.* from user O, userfriends P where (O.UserID != '"+UserId+"') and (P.user_UserID = '"+UserId+"') and (P.FriendList_UserID != O.UserID)", function(err, rows, fields){
+  db.query("select O.* from friendlist O, userfriends Q where (Q.user_UserID = '"+UserId+"') and (Q.FriendList_UserID = O.UserID); select O.* from user O, userfriends P where ((O.UserID != '"+UserId+"') and (P.user_UserID = '"+UserId+"') and (P.FriendList_UserID != O.UserID));", function(err, rows, fields){
     if (err){
       console.log('error', err);
       res.render('pages/friends',{
@@ -198,11 +199,71 @@ app.get("/friends", (req, res) => {
   });
 });
 
+app.post("/viewfriend", (req, res) => {
+  var friendo = req.body.ffeerr;
+  const qer = "select O.* from games O,  user P, usergame Q where (P.UserID = '"+friendo+"') and (P.UserID = Q.User_UserID) and (Q.Games_GameID = O.GameID);";
+  db.query(qer, function(err, rows, fields){
+    if (err){
+      console.log('error', err);
+      res.render('pages/Friendsgames',{
+        my_title: 'Collection Page',
+        data: ''
+      })
+    }
+    else{
+      res.render('pages/Friendsgames',{
+        my_title: 'Collection Page',
+        data: rows
+      })
+    }
+  });
+});
+
 app.get("/register", (req, res) => { //Spencer
   res.render('pages/register', {
     my_title: 'Register Page'
   });
 });
+
+
+
+
+app.get("/stimey", (req, res) => {
+  const ter = "INSERT INTO `userfriends` (user_UserID, FriendList_UserID) VALUES ('"+UserId+"', '"+friendID+"');";
+  db.query(ter , function(err, rows, fields){
+    if (err) throw err;
+  });
+res.redirect("/friends");
+friendID = 0;
+});
+
+
+
+
+
+app.post("/addfriend", (req, res) =>{
+  var feind = req.body.ger;
+  friendID = feind;
+  const rick = "select UserName as name from user where UserID = '"+friendID+"';";
+  db.query(rick, function(err, result, fields){
+    if (err) throw err;
+    var temp = 0;
+    result.forEach(function(item){
+      temp = item.name;
+    });
+    console.log(temp);
+  var num = 1;
+  console.log(temp);
+  const jeff = "INSERT INTO `friendlist` (UserID, UserName, AbleToViewGames) VALUES ('"+friendID+"', '"+temp+"', '"+num+"')";
+  db.query(jeff, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+  res.redirect("/stimey");
+});
+  });
+
+
 
 app.post('/register', (req, res) => { //Spencer
   var un = req.body.username;  //not null
@@ -213,6 +274,7 @@ app.post('/register', (req, res) => { //Spencer
   var dob = req.body.dob; //not null
 
   var nul = "null";
+  var nul2 = "2020-09-20";
 
   //var pn = req.body.phonenumber; //can be empty
   //var city = req.body.city; //can be empty
@@ -230,7 +292,7 @@ app.post('/register', (req, res) => { //Spencer
   //var sq3 = req.body.securityq3;
   //var sa3 = req.body.securitya3;
 
-  var sql = "insert into `User` (UserName, password, FirstName, LastName, Email, DOB, PhoneNumber, City, State, Zip, Country, AccountCreationDate, SecurityQuestion1, Answer1, SecurityQuestion2, Answer2, SecurityQuestion3, Answer3) VALUES ('"+un+"','"+pw+"','"+fn+"','"+ln+"','"+em+"','"+dob+"','"+nul+"','"+nul+"', '"+nul+"', '"+nul+"','"+nul+"','"+nul+"','"+sq1+"','"+sa1+"','"+nul+"','"+nul+"','"+nul+"','"+nul+"');";
+  var sql = "insert into `User` (UserName, password, FirstName, LastName, Email, DOB, PhoneNumber, City, State, Zip, Country, AccountCreationDate, SecurityQuestion1, Answer1, SecurityQuestion2, Answer2, SecurityQuestion3, Answer3) VALUES ('"+un+"','"+pw+"','"+fn+"','"+ln+"','"+em+"','"+dob+"','"+nul+"','"+nul+"', '"+nul+"', '"+nul+"','"+nul+"','"+nul2+"','"+sq1+"','"+sa1+"','"+nul+"','"+nul+"','"+nul+"','"+nul+"');";
   db.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 record inserted");
