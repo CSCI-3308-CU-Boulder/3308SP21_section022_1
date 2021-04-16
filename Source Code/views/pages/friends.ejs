@@ -1,8 +1,8 @@
 <%- include('../template/head') %>
 
 <%- include('../template/nav') %>
-
 <div class="page-wrap">
+
 
 <div class="container">
 
@@ -16,12 +16,11 @@
     data.forEach(function(item){
       var x = Math.floor((Math.random() * 6) + 1);
       x = "../../public/img/icon" + String(x) + "@2x.png";
-      console.log(x);
-      friends += '<div class="col"><div class="card"><img class="img" src= '+x+' height="200" width="200" alt="Card image cap"><div class="card-body"><h3>'+ item.UserName+'</h3></div><button class="open-friends-button" data-toggle="modal" data-target="#exampleModalCenter"  value = "'+ item.UserID +'" onclick="/viewCollection(this.value)")">View Collection</button></div></div>'
+      friends += '<div class="col"><div class="card"><img class="img" src= '+x+' height="200" width="200" alt="Card image cap"><div class="card-body"><h3>'+ item.UserName+'</h3></div><form method="POST" action="/viewfriend" autocomplete="off"> \
+        <button name="ffeerr" id = "ffeerr" type="submit" value='+item.UserID+'>View Games</button></form></div></div>'
     });
     var hold = '<div class="row">'+ friends +' </div>'
     %>
-
     <%- hold %>
   <% } %>
 
@@ -39,8 +38,8 @@
     users.forEach(function(item){
       var x = Math.floor((Math.random() * 6) + 1);
       x = "../../public/img/icon" + String(x) + "@2x.png";
-      console.log(x);
-      friends += '<div class="col"><div class="card"><img class="img" src= '+x+' height="200" width="200" alt="Card image cap"><div class="card-body"><h3>'+ item.UserName+'</h3></div></div></div>'
+      friends += '<div class="col"><div class="card"><img class="img" src= '+x+' height="200" width="200" alt="Card image cap"><div class="card-body"><h3>'+ item.UserName+'</h3></div> \
+        <button name="ger" id = "ger" type="submit" value='+item.UserID+'>Add Friend</button></div></div>'
     });
     var hold = '<div class="row">'+ friends +' </div>'
     %>
@@ -48,7 +47,7 @@
   <% } %>
 </div>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -73,7 +72,7 @@
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
