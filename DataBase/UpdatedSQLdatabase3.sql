@@ -65,16 +65,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Games` (
   PRIMARY KEY (`GameID`))
 ENGINE = InnoDB;
 
-insert into `mydb`.`Games`(`GameID`, `Title`, `Description`, `Multiplayer`, `ESRB_Rating`, `DateReleased`, `Publisher`,  `Developer` , `Notes`, `CommunityReview`, `IGNReview`, `Platform`) values
-	(1, 'Zelda', 'Adventure Game', false, 'E10+', '1986-02-21','Nintendo', 'Nintendo', null, 9.8, 9.0,'NES'),
-	(2, 'Rick James', 'SIM', false, 'T', '2003-02-21','Rare', 'Microsoft', null, 6.8, 5.0,'computer'),
-	(3, 'Book Worm', 'Education', true, 'E', '1999-05-01','THQ', 'Activision', null, 6.0, 7.2,'computer'),
-    (4, 'Mario Odessey', 'Collection Game', True, 'E10+', '2016-08-13','Nintendo', 'Nintendo', null, 9.7, 8.7,'Nintendo Switch'),
-    (5, 'Zelda Breath of the Wild', 'Adventure Game', false, 'E10+', '2016-02-21','Nintendo', 'Nintendo', null, 9.8, 7.0,'Nintendo Switch'),
-    (6, 'Counter Strike', 'Multiplayer Shooter', true, 'M', '2012-04-20','Valve', 'Valve', null, 8.3, 7.5,'Computer'),
-    (7, "Spongebob's Atlantis Squarepantis", 'Adventure Game', false, 'E10+', '2009-11-12','THQ', 'Activision', null, 5.6, 5.6,'Nintendo DS'),
-    (8, "Woe was I", 'Walking Sim', false, 'RP', '2021-03-02','Dolphin Corp.', 'Steam', null, 0.1, 1.2,'Computer'),
-    (9, 'Pokemon Go', 'MMORPG', true, 'E10+', '2016-02-21','Atlantic', 'Nintendo', null, 9.0, 8.0,'Mobile');
+insert into `mydb`.`Games`(`GameID`, `Title`, `Description`, `Multiplayer`, `ESRB_Rating`, `DateReleased`, `Publisher`,  `Link`, `Developer` , `Notes`, `CommunityReview`, `IGNReview`, `Platform`) values
+	(1, 'Zelda', 'Adventure Game', false, 'E10+', '1986-02-21','Nintendo', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1nr4.jpg', 'Nintendo', null, 9.8, 9.0,'NES'),
+	(2, 'Rick James', 'SIM', false, 'T', '2003-02-21','Rare', 'https://direct.rhapsody.com/imageserver/images/alb.398258562/600x600.jpg', 'Microsoft', null, 6.8, 5.0,'computer'),
+	(3, 'Book Worm', 'Education', true, 'E', '1999-05-01','THQ', 'https://m.media-amazon.com/images/I/7184+E8dBlL._SL1443_.jpg', 'Activision', null, 6.0, 7.2,'computer'),
+    (4, 'Mario Odessey', 'Collection Game', True, 'E10+', '2016-08-13','Nintendo', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1mxf.jpg', 'Nintendo', null, 9.7, 8.7,'Nintendo Switch'),
+    (5, 'Zelda Breath of the Wild', 'Adventure Game', false, 'E10+', '2016-02-21','Nintendo', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1vcp.jpg', 'Nintendo', null, 9.8, 7.0,'Nintendo Switch'),
+    (6, 'Counter Strike', 'Multiplayer Shooter', true, 'M', '2012-04-20','Valve', 'https://images.igdb.com/igdb/image/upload/t_cover_big/y0vlsy3mxlkxnfafvsnk.jpg', 'Valve', null, 8.3, 7.5,'Computer'),
+    (7, "Spongebob's Atlantis Squarepantis", 'Adventure Game', false, 'E10+', '2009-11-12','THQ', 'https://images-na.ssl-images-amazon.com/images/I/61xHbrjzYyL._SX385_.jpg', 'Activision', null, 5.6, 5.6,'Nintendo DS'),
+    (8, "Woe was I", 'Walking Sim', false, 'RP', '2021-03-02','Dolphin Corp.', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2a5w.jpg', 'Steam', null, 0.1, 1.2,'Computer'),
+    (9, 'Pokemon Go', 'MMORPG', true, 'E10+', '2016-02-21','Atlantic', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1zj7.jpg', 'Nintendo', null, 9.0, 8.0,'Mobile');
 
 DROP TABLE IF EXISTS `mydb`.`UserGame` ;
 
@@ -214,7 +214,7 @@ ENGINE = InnoDB;
 
 insert into `mydb`.`Friendlist`(`UserID`,  `Username`,  `AbleToViewGames`) values
 	(10001, 'ace', 1),
-    (10011, 'spiderboy', 0);
+    (10002, 'spiderboy', 0);
 
 DROP TABLE IF EXISTS `mydb`.`UserFriends` ;
 
